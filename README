@@ -1,0 +1,29 @@
+cuboid is a small C program for generating simple cuboid meshes in
+different mesh formats.
+
+  Copyright (C) 2022 James D. Trotter
+
+  Copying and distribution of this file, with or without modification,
+  are permitted in any medium without royalty provided the copyright
+  notice and this notice are preserved.
+
+The following command can be used to build cuboid:
+
+  gcc -o ../cuboid cuboid.c -lm
+
+Or, if you need support for HDF5 and OpenMP:
+
+  gcc -o ../cuboid cuboid.c -DHAVE_HDF5 -lm -lhdf5 -fopenmp
+
+Example usage:
+
+  OMP_NUM_THREADS=8 ./cuboid --verbose --dolfin-xdmf-ascii --dx=100 --dy=100 --dz=100 >cuboid.xdmf
+
+The above command generates a default mesh of the region
+[0,20000]x[0,7000]x[0,3000] with a resolution of 100x100x100. The mesh
+is written to standard output, which is redirected to the file
+'cuboid.xdmf'. The mesh is written in the DOLFIN XDMF format, where,
+data is stored as ASCII text embedded in an XML file. In this example,
+the generated mesh consists of 442 401 vertices and 2 520 000 cells.
+
+cuboid is free software. See the file COPYING for copying conditions.
