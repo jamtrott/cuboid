@@ -1,4 +1,4 @@
-/* This file is part of dolfinx-benchmarks.
+/* This file is part of cuboid.
  *
  * Copyright (C) 2022 James D. Trotter
  *
@@ -18,7 +18,7 @@
  * Authors: James D. Trotter <james@simula.no>
  * Last modified: 2022-08-15
  *
- * Generate a cuboid mesh.
+ * Generate box-shaped, tetrahedral meshes.
  */
 
 #ifdef HAVE_HDF5
